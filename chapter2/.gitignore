@@ -33,7 +33,7 @@ nbdist/
 .idea/**/shelf
 
 # Generated files
-.idea/**/contentModel.xml
+.idea/**/contentModel.xml:ㄷ
 
 # Sensitive or high-churn files
 .idea/**/dataSources/
@@ -119,3 +119,9 @@ gradle-app.setting
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
 
+!/gradle/
+!/settings.gradle
+
+!/gradlew.bat
+
+!/gradlew
