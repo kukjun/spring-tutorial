@@ -1,6 +1,6 @@
 package chap03.main;
 
-import chap03.main.config.AppCtx1;
+import chap03.config.AppCtx1;
 import chap03.spring.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

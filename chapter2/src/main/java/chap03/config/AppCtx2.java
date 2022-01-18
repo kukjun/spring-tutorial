@@ -1,4 +1,4 @@
-package chap03.main.config;
+package chap03.config;
 
 
 import chap03.spring.*;
