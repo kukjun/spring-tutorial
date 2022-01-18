@@ -1,6 +1,7 @@
 package chap04.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
 
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
@@ -8,10 +9,10 @@ import java.util.Optional;
 public class MemberPrinter {
 
   @Autowired
-  private Optional<DateTimeFormatter> formatOpt;
+  @Nullable
+  private DateTimeFormatter dateTimeFormatter;
 
   public void print(Member member) {
-    DateTimeFormatter dateTimeFormatter = formatOpt.orElse(null);
     if (dateTimeFormatter == null) {
       System.out.printf(
               "회원 정보: 아이디=%d, 이메일=%s, 이름=%s, 등록일=%tF\n",
