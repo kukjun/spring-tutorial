@@ -9,11 +9,12 @@ import org.springframework.context.annotation.FilterType;
 import org.springframework.stereotype.Component;
 
 @Configuration
-@ComponentScan(basePackages = {"chap05.spring"})
+@ComponentScan(basePackages = {"chap05.spring", "chap05.spring2"},
+excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION ,classes = ManualBean.class))
 public class AppCtx {
 
   @Bean
-  public MemberDao memberDao() {
+  public MemberDao memberDao2() {
     return new MemberDao();
   }
 
@@ -27,28 +28,6 @@ public class AppCtx {
   @Qualifier("summaryPrinter")
   public MemberSummaryPrinter memberPrinter2() {
     return new MemberSummaryPrinter();
-  }
-
-  @Bean
-  public MemberRegisterService memberRegSvc() {
-    return new MemberRegisterService();
-  }
-
-  @Bean
-  public ChangePasswordService changePwdSvc() {
-    return new ChangePasswordService();
-  }
-
-  @Bean
-  public MemberListPrinter listPrinter() {
-    return new MemberListPrinter();
-  }
-
-  @Bean
-  public MemberInfoPrinter infoPrinter() {
-    MemberInfoPrinter infoPrinter = new MemberInfoPrinter();
-    infoPrinter.setPrinter(memberPrinter2());
-    return infoPrinter;
   }
 
   @Bean
