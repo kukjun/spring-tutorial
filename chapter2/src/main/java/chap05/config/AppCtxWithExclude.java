@@ -10,8 +10,10 @@ import org.springframework.context.annotation.FilterType;
 
 @Configuration
 @ComponentScan(basePackages = {"chap05.spring", "chap05.spring2"},
-        excludeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE,
-                classes = MemberDao.class ))
+        excludeFilters = {
+                @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = ManualBean.class),
+                @ComponentScan.Filter(type = FilterType.REGEX, pattern = "chap05.spring2\\..*")
+        })
 public class AppCtxWithExclude {
   @Bean
   public MemberDao memberDao() {
