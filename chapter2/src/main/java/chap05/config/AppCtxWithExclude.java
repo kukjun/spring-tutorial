@@ -7,9 +7,11 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
 
+
 @Configuration
-@ComponentScan(basePackages = {"chap05.spring"},
-        excludeFilters = @ComponentScan.Filter(type = FilterType.REGEX, pattern = "chap05.spring\\..*Dao"))
+@ComponentScan(basePackages = {"chap05.spring", "chap05.spring2"},
+        excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION,
+                classes = {NoProduct.class, ManualBean.class} ))
 public class AppCtxWithExclude {
   @Bean
   public MemberDao memberDao() {
