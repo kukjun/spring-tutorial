@@ -27,5 +27,6 @@ public class MemberInfoPrinter {
   @Qualifier("printer")
   public void setPrinter(MemberPrinter printer) {
     this.printer = printer;
+    System.out.println(printer.toString());
   }
 }
