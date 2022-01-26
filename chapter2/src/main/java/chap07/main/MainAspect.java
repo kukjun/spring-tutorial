@@ -11,13 +11,15 @@ public class MainAspect {
     AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppCtx.class);
 
     // 수정전
-//    Calculator cal = ctx.getBean("calculator", Calculator.class);
+    Calculator cal = ctx.getBean("calculator", Calculator.class);
 
     // 수정후
-    Calculator cal = ctx.getBean("calculator", RecCalculator.class);
+//    Calculator cal = ctx.getBean("calculator", RecCalculator.class);
     long fiveFact = cal.factorial(5);
     System.out.println("cal.factorial(5) = " + fiveFact);
     System.out.println(cal.getClass().getName());
     ctx.close();
+
+//    Primary Type = boolean, char, int, long, double, float
   }
 }
