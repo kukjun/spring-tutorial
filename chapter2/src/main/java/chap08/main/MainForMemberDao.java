@@ -1,8 +1,8 @@
 package chap08.main;
 
 import chap08.config.AppCtx;
-import chap08.spring.Member;
-import chap08.spring.MemberDao;
+import chap08.spring.dao.MemberDao;
+import chap08.spring.member.Member;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.time.LocalDateTime;

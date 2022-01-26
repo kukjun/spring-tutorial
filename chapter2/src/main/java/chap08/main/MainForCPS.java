@@ -1,9 +1,9 @@
 package chap08.main;
 
-import chap03.spring.MemberNotFoundException;
-import chap03.spring.WrongIdPasswordException;
 import chap08.config.AppCtx;
-import chap08.spring.ChangePasswordService;
+import chap08.spring.exception.MemberNotFoundException;
+import chap08.spring.exception.WrongIdPasswordException;
+import chap08.spring.service.ChangePasswordService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MainForCPS {

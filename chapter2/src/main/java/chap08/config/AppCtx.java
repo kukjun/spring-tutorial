@@ -1,7 +1,7 @@
 package chap08.config;
 
-import chap08.spring.ChangePasswordService;
-import chap08.spring.MemberDao;
+import chap08.spring.dao.MemberDao;
+import chap08.spring.service.*;
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,6 +26,7 @@ public class AppCtx {
     ds.setMaxIdle(10);
     ds.setTestWhileIdle(true);
     ds.setMinEvictableIdleTimeMillis(1000 * 60 * 3);
+    ds.setTimeBetweenEvictionRunsMillis(10 * 1000);
     return ds;
   }
 
@@ -42,11 +43,28 @@ public class AppCtx {
   }
 
   @Bean
-  public ChangePasswordService changePasswordService() {
-    ChangePasswordService pwdSvc = new ChangePasswordService();
-    pwdSvc.setMemberDao(memberDao());
-    return pwdSvc;
+  public ChangePasswordService changePwdSvc() {
+    return new ChangePasswordService();
   }
 
+  @Bean
+  public MemberRegisterService memberRegSvc() {
+    return new MemberRegisterService();
+  }
+
+  @Bean
+  public MemberPrinter memberPrinter() {
+    return new MemberPrinter();
+  }
+
+  @Bean
+  public MemberListPrinter listPrinter() {
+    return new MemberListPrinter();
+  }
+
+  @Bean
+  public MemberInfoPrinter infoPrinter() {
+    return new MemberInfoPrinter();
+  }
 
 }
