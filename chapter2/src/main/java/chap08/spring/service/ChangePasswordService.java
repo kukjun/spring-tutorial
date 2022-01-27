@@ -13,6 +13,7 @@ public class ChangePasswordService {
     @Autowired
     private MemberDao memberDao;
 
+
     @Transactional
     public void changePassword(String email, String oldPwd, String newPwd) {
         Member member = memberDao.selectByEmail(email);

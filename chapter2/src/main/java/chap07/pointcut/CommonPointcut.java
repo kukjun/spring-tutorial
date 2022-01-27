@@ -6,6 +6,5 @@ public class CommonPointcut {
 
   @Pointcut("execution(public * chap07..*(..))")
   public void commonTarget() {
-
   }
 }

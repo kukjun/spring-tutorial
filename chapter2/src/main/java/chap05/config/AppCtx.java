@@ -14,6 +14,14 @@ excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION ,classes = M
 public class AppCtx {
 
   @Bean
+  public Test test() {
+    System.out.println();
+    System.out.println("TestInAppCtx");
+
+    return new Test();
+  }
+
+  @Bean
   public MemberDao memberDao2() {
     return new MemberDao();
   }

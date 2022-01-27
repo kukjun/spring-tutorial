@@ -20,6 +20,5 @@ public class MainAspect {
     System.out.println(cal.getClass().getName());
     ctx.close();
 
-//    Primary Type = boolean, char, int, long, double, float
   }
 }
