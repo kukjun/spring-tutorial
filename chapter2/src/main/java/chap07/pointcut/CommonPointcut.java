@@ -4,7 +4,7 @@ import org.aspectj.lang.annotation.Pointcut;
 
 public class CommonPointcut {
 
-  @Pointcut("execution(public * chap07..*(..))")
+  @Pointcut("execution(public * chap07.calculator..*(..))")
   public void commonTarget() {
   }
 }
