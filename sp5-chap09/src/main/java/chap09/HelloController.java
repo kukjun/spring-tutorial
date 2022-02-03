@@ -20,6 +20,7 @@ public class HelloController {
 
 //        이 경우 HTTP 요청 파라미터 name 을 메서드의 name 으로 전달
 //        데이터 이름을 식별하기 위한 greeting, 속성 이름에 해당하는 값 "안녕하세요, " + name
+//        전달 방식은 Map 객체를 생성해서 값을 넣고 View 객체에 전달
         model.addAttribute("greeting", "안녕하세요, " + name);
 //        처리 결과를 보여줄 View 이름으로 hello 사용
         return "hello";

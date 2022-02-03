@@ -16,6 +16,7 @@ public class MvcConfig implements WebMvcConfigurer {
         configurer.enable();
     }
 
+//    prefix + 뷰이름 + suffix 에 해당하는 경로를 뷰 코드로 사용하는 InternalResourceViewResolver 객체 리턴
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
         registry.jsp("WEB-INF/view/", ".jsp");
