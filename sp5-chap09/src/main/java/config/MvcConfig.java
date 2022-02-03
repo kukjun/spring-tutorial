@@ -12,8 +12,7 @@ public class MvcConfig implements WebMvcConfigurer {
 
     @Override
     public void configureDefaultServletHandling(
-            DefaultServletHandlerConfigurer configurer
-    ) {
+            DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
 
