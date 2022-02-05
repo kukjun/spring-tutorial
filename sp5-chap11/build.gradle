@@ -24,8 +24,8 @@ dependencies {
 
     implementation 'jstl:jstl:1.2'
 
-    implementation 'org.slf4j:slf4j-parent:1.7.35'
     implementation 'ch.qos.logback:logback-classic:1.2.10'
+    implementation 'org.slf4j:log4j-over-slf4j:1.7.35'
 
     testImplementation 'junit:junit:4.11'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
