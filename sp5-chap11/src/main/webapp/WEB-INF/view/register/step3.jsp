@@ -7,13 +7,20 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
-    <title>회원가입</title>
+    <title><spring:message code="member.register"/></title>
 </head>
 <body>
-<%--registerRequest 는 커맨드 객체에 접근할 때 사용한 속성 이름이다.--%>
-<p><strong>${registerRequest.name}님</strong>회원 가입을 완료했습니다.</p>
-<p><a href="<c:url value='/main'/>">[첫 화면 이동]</a> </p>
+    <%--registerRequest 는 커맨드 객체에 접근할 때 사용한 속성 이름이다.--%>
+    <p>
+        <spring:message code="register.done" arguments="${registerRequest.name},${registerRequest.email}"/>
+<%--        <spring:message code="register.done">--%>
+<%--            <spring:argument value="${registerRequest.name}"/>--%>
+<%--            <spring:argument value="${registerRequest.email}"/>--%>
+<%--        </spring:message>--%>
+    </p>
+    <p><a href="<c:url value='/main'/>">[<spring:message code="go.main"/>]</a></p>
 </body>
 </html>
