@@ -96,6 +96,7 @@ public class MemberDao {
                 new MemberRowMapper());
     }
 
+    // 한번 값객체 타입으로 해보기 queryForObject
     public int count() {
         return jdbcTemplate.queryForObject(
                 "select count(*) from MEMBER", Integer.class
